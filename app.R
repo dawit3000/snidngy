@@ -26,7 +26,7 @@ ui <- navbarPage(
            )
   ),
   tabPanel("Documentation",
-           tags$iframe(style = "height: 600px; width: 100%;", src = "https://rstories.netlify.app/2024/05/26/quantifying-extra-compensations-of-full-time-instructors-at-an-ideal-college./"),
+           tags$iframe(style = "height: 600px; width: 100%;", src = "https://github.com/dawit3000/snidngy/blob/main/README.md"),
   ),
   tabPanel("Pitch Presentation", includeMarkdown("https://github.com/dawit3000/Shinyproject/blob/main/README.md"),
   )
