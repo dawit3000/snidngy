@@ -25,12 +25,18 @@ ui <- navbarPage(
              )
            )
   ),
-  tabPanel("Documentation",
-           tags$iframe(style = "height: 600px; width: 100%;", src = "https://github.com/dawit3000/snidngy/blob/main/README.md"),
+  tabPanel("Documentation", includeMarkdown("README.RMD"),
   ),
-  tabPanel("Pitch Presentation", includeMarkdown("https://github.com/dawit3000/Shinyproject/blob/main/README.md"),
+ 
+   tabPanel("Pitch Presentation", includeMarkdown("ShinyApp_Release_Presentation_Nextword.RMD"),
+  ),
+ 
+  tabPanel(
+    "Millstone",
+    tags$a(href = "https://rpubs.com/dawit3000/A_Prelude_to_Text_Mining", "Click here for A Prelude to Text Mining")
   )
-)
+  
+  )
 
 # Define server logic
 server <- function(input, output) {
@@ -52,7 +58,7 @@ server <- function(input, output) {
     # Initialize output data
     output_data <- NULL
     
-    # Example logic (adjust as per your actual data handling functions)
+    # logic for handling (for all n = 1, 2, ...)
     if (length(words) == 1) {
       ngram <- words
       output_data <- outputBigram(ngram)[, c(4, 2)]

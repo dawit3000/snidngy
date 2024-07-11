@@ -1,4 +1,4 @@
-## 1 words as input, options for 2rd word as output sorted descending by frequency
+## for 1gram inputs, nextword
 
 twogramsplit <- readRDS("twogramsplit.rds")
 outputBigram = function(x){
@@ -6,31 +6,30 @@ outputBigram = function(x){
 }
 
 
-## 2 words as input, options for 3rd word as output sorted descending by frequency
+## for 2gram inputs, nextword
 threegramsplit <- readRDS("threegramsplit.rds") ##2 rest
 outputTrigram = function(x){
   subset(threegramsplit, prefix == x)
 }
 
-## 3 words as input, options for 4rt word as output sorted descending by frequency
+## for 3gram inputs, nextword
 fourgramsplit <- readRDS("fourgramsplit.rds") ##2 rest
 outputFourgram = function(x){
   subset(fourgramsplit, prefix == x)
 }
 
-## 4 words as input, options for 5th word as output/nextword sorted descending by frequency
+## for 4gram inputs, nextword
 fivegramsplit <- readRDS("fivegramsplit.rds") ##2 rest
 outputFivegram = function(x){
   subset(fivegramsplit, prefix == x)
 }
 
 
-## 5 words as input, options for 4rt word as output sorted descending by frequency
+## for 5gram inputs, nextword
 sixgramsplit <- readRDS("sixgramsplit.rds") ##2 rest
 outputSixegram = function(x){
   subset(sixgramsplit, prefix == x)
 }
-
 
 ## options(warn = -1)
 
