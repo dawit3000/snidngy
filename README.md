@@ -15,7 +15,7 @@ This app was trained on a curated corpus sourced from Blogs, Twitter, and News s
 
 ## Convenience Tabs
 
-**Pitch Presentation - **  a lighter version of an overview of the project.
+**Pitch Presentation -**  a lighter version of an overview of the project.
 
-**Millstone - A link to my Millstone report entitled "A Prelude to Text Mining".
+**Millstone -**  links to my Millstone report: (A Prelude to Text Mining)[https://rpubs.com/dawit3000/A_Prelude_to_Text_Mining].
 
