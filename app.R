@@ -1,7 +1,7 @@
 library(shiny)
 library(tm)
 library(lattice)
-library(dplyr)
+## library(dplyr)
 source("my_helpers.R")  # Includes necessary helper functions
 
 # Define UI for application
@@ -134,8 +134,10 @@ server <- function(input, output) {
     
     # Sort and prepare data for frequency/probability table
     output_data$frequency <- output_data$frequency / sum(output_data$frequency)
-    output_data <- arrange(output_data, desc(frequency))
-    most_frequent_words <- arrange(most_frequent_words, desc(frequency))
+    output_data <- output_data[order(output_data$frequency, decreasing = TRUE), ]
+    ## output_data <- arrange(output_data, desc(frequency))
+    most_frequent_words <- most_frequent_words[order(most_frequent_words$frequency, decreasing = TRUE), ]
+    ## most_frequent_words <- arrange(most_frequent_words, desc(frequency))   
     names(output_data)[2] <- "Probability"  # Rename the second column
     
     # Render Probability table
