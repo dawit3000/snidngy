@@ -13,10 +13,9 @@ Welcome to the Most Probable Next Word(s) Predictor app! This application predic
 
 This app was trained on a curated corpus sourced from Blogs, Twitter, and News sources totaling approximately 55.62 MB. For input up to five words (n=5), it predicts the next most probable words. If a word can't be predicted using a five-word context, it performs a line search using contexts of decreasing length (n = 4, 3, 2, 1) until the best result is found. If no suitable prediction is found up to n=1, it defaults to the most frequent words in the training set. For inputs longer than five words (n >= 5), it considers only the last five words for prediction.
 
-## Resources:
-For more, check the following tabs at the top bar of the app:
+## Convenience Tabs
 
-- **Pitch Presentation -**  a light version of my Pitch Presentation)
+**Pitch Presentation - **  a lighter version of an overview of the project.
 
-- **Millstone - ** has a link to my Millstone presentation 
+**Millstone - A link to my Millstone report entitled "A Prelude to Text Mining".
 
