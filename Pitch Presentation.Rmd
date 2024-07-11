@@ -1,0 +1,62 @@
+---
+title: "Most Probable Next Word(s) Predictor"
+author: "D. Aberra"
+date: "2024-07-10"
+output: ioslides_presentation
+---
+
+## Introduction
+Most Probable Next Word(s) Predictor
+
+**Objective:** Predicting the next word based on user-input ngrams (sequence of words). 
+
+**Internal Structure:** The prediction uses a curated corpus from Blogs, Twitter, and News sources provided by the John Hopkins University Data Science instructors at Coursera. 
+The Prediction Model was trained on a combined randomly selected 10% sample from each corpus, totaling approximately 55.62 MB. 
+
+Accuracy was checked on unseen vector of testing data and found to be reasonable.
+
+
+## Neurology
+
+**Method:** Markov Model Approach
+
+For input ngram of up to five words (n=5 or less), it predicts the next most probable words. 
+
+If a word can't be predicted using a five-word context for a 5-gram, it performs a line search using contexts of decreasing length (n = 4, 3, 2, 1) by truncating tails until the best result is found. 
+
+If no suitable prediction is found up to the n=1 stage, it defaults to the most frequent words in the training set. 
+
+For inputs longer than five words (n >= 5), it considers only the last five words for prediction and continues with line search of the next word as in the case of n=5.
+
+## Availablity:
+
+**Deployment:**
+
+- Will be eployed at ShinyApp.IO: [ShinyApp: Most Probable Next Word(s) Predictor](https://shiny.posit.co/)
+
+- Github Project Page: [Most Probable Next Word(s) Predictor](https://github.com/dawit3000/snidngy)
+
+**Visualization:**  See Documentation for more
+
+<div style="text-align: center;">
+  <img src="pic.png" alt="Example Image" width="275" height="200" />
+</div>
+
+## Use,  Future Directions
+
+**Potential Use Cases:** 
+
+- [Microsoft SwiftKey](https://www.microsoft.com/en-us/swiftkey) in mind.
+
+- Other assistive typing applications.
+
+- Automated text completion tools.
+
+- Enhancing user experience in chatbots and natural language processing applications.
+
+**Future Directions:**
+
+- Enhancements in model accuracy.
+
+- Expansion to larger datasets and additional text sources.
+

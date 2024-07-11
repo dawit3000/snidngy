@@ -14,7 +14,8 @@ ui <- navbarPage(
                actionButton("plotButton", "Click to Render"),
                
                p(" "),
-               p("========"),
+               
+               p("* =======   ***   ======== *"),
                tags$u(strong(p("Disclaimer"))),
                p("This app was trained on a curated corpora sourced from Blogs, Twitter, and News sources, totaling about 55.62 MB. "),
              ),
@@ -28,7 +29,7 @@ ui <- navbarPage(
   tabPanel("Documentation", includeMarkdown("README.RMD"),
   ),
  
-   tabPanel("Pitch Presentation", includeMarkdown("ShinyApp_Release_Presentation_Nextword.RMD"),
+   tabPanel("Pitch Presentation", includeMarkdown("Pitch Presentation.RMD"),
   ),
  
   tabPanel(
