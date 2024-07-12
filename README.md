@@ -16,7 +16,7 @@ Welcome to the Most Probable Next Word(s) Predictor app! This application predic
 
 **Documentation -**  an easy to understand user manual.
 
-**Pitch Presentation -**  a lighter version of an overview of the project.
+**Pitch Presentation -** available here [about the project](https://rpubs.com/dawit3000/Most_Probable_Next_Words_Predictor)
 
 **Millstone -**  links to my Millstone report: [A Prelude to Text Mining](https://rpubs.com/dawit3000/A_Prelude_to_Text_Mining).
 
