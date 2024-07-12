@@ -1,7 +1,3 @@
-library(shiny)
-library(tm)
-library(lattice)
-## library(dplyr)
 source("my_helpers.R")  # Includes necessary helper functions
 
 # Define UI for application
@@ -17,7 +13,7 @@ ui <- navbarPage(
                
                p("* =======   ***   ======== *"),
                tags$u(strong(p("Disclaimer"))),
-               p("This app was trained on a curated corpora sourced from Blogs, Twitter, and News sources, totaling about 55.62 MB. "),
+               p("This app was trained on a curated corpora sourced from Blogs, Twitter, and News sources, totaling less than 55 MB due to server restriction. "),
              ),
              mainPanel(
                h3("Probability Table for the Next Word"),
@@ -26,18 +22,17 @@ ui <- navbarPage(
              )
            )
   ),
-  tabPanel("Documentation", includeMarkdown("README.RMD"),
+  tabPanel("Documentation", includeMarkdown("readme.md"),
   ),
- 
-   tabPanel("Pitch Presentation", includeMarkdown("Pitch Presentation.RMD"),
+  
+  tabPanel("Pitch Presentation", includeMarkdown("Pitch.md"),
   ),
- 
+  
   tabPanel(
     "Millstone",
     tags$a(href = "https://rpubs.com/dawit3000/A_Prelude_to_Text_Mining", "Click here for A Prelude to Text Mining")
   )
-  
-  )
+)
 
 # Define server logic
 server <- function(input, output) {
@@ -46,12 +41,12 @@ server <- function(input, output) {
     ngram <- input$ngramInput
     
     # Clean and process input
-    ngram <- tolower(ngram)
+    ## ngram <- tolower(ngram)
     ## ngram <- removeWords(ngram, stopwords("english")) # Removing stopwords causes crashes
-    ngram <- stemDocument(ngram)
-    ngram <- removePunctuation(ngram)            
-    ngram <- stripWhitespace(ngram)
-    # ngram <- removeNumbers(ngram)  # Removing numbers causes crashes
+    ## ngram <- stemDocument(ngram)
+    ## ngram <- removePunctuation(ngram)            
+    ## ngram <- stripWhitespace(ngram)
+    ## ngram <- removeNumbers(ngram)  # Removing numbers causes crashes
     
     # Split the user-inserted ngram into words
     words <- unlist(strsplit(ngram, " "))
