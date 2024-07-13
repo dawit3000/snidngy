@@ -170,38 +170,35 @@ splitToken5gram = function(x){
   x$nextword <- nextword
   return(x)
 }
+## Extract components from 6-grams
 
-## splitToken6gram
-
-splitToken6gram = function(x){
+extractComponents6gram = function(data) {
   
-  one_less = character(nrow(x))
-  nextword = character(nrow(x))
-  w <- strsplit(x$gram, " ", fixed=TRUE)
+  previousWords = character(nrow(data))
+  nextWord = character(nrow(data))
+  wordsList <- strsplit(data$gram, " ", fixed = TRUE)
   
-  for(i in 1:nrow(x)){
-    one_less[i] = paste(paste(w[[i]][1],w[[i]][2]), w[[i]][3], w[[i]][4], w[[i]][5])
-    nextword[i] = w[[i]][6]
+  for (i in 1:nrow(data)) {
+    previousWords[i] = paste(wordsList[[i]][1:5], collapse = " ")
+    nextWord[i] = wordsList[[i]][6]
   }
-  x$one_less <- one_less
-  x$nextword <- nextword
-  return(x)
+  
+  data$previousWords <- previousWords
+  data$nextWord <- nextWord
+  return(data)
 }
 
-## 1 words as input, options for 2rd word as output sorted descending by frequency
-outputBigram = function(x){
-  subset(bigramfunction, one_less == x)
+## Get suggestions for the second word based on the first word
+getBigramSuggestions = function(inputWord) {
+  subset(bigramFunction, previousWords == inputWord)
 }
 
-
-## 2 words as input, options for 3rd word as output sorted descending by frequency
-outputTrigram = function(x){
-  subset(trigramfunction, one_less == x)
+## Get suggestions for the third word based on the two previous words
+getTrigramSuggestions = function(inputPhrase) {
+  subset(trigramFunction, previousWords == inputPhrase)
 }
 
-## 2 words as input, options for 3rd word as output sorted descending by frequency
-outputFourgram = function(x){
-  subset(fourgramfunction, one_less == x)
+## Get suggestions for the fourth word based on the three previous words
+getFourgramSuggestions = function(inputPhrase) {
+  subset(fourgramFunction, previousWords == inputPhrase)
 }
-
-
