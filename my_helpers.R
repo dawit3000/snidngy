@@ -13,26 +13,26 @@ outputBigram = function(x){
 
 
 ## for 2gram inputs, nextword
-threegramsplit <- readRDS("data/threegramsplit.rds") ##2 rest
+threegramsplit <- readRDS("data/threegramsplit.rds") 
 outputTrigram = function(x){
   subset(threegramsplit, prefix == x)
 }
 
 ## for 3gram inputs, nextword
-fourgramsplit <- readRDS("data/fourgramsplit.rds") ##2 rest
+fourgramsplit <- readRDS("data/fourgramsplit.rds") 
 outputFourgram = function(x){
   subset(fourgramsplit, prefix == x)
 }
 
 ## for 4gram inputs, nextword
-fivegramsplit <- readRDS("data/fivegramsplit.rds") ##2 rest
+fivegramsplit <- readRDS("data/fivegramsplit.rds") 
 outputFivegram = function(x){
   subset(fivegramsplit, prefix == x)
 }
 
 
 ## for 5gram inputs, nextword
-sixgramsplit <- readRDS("data/sixgramsplit.rds") ##2 rest
+sixgramsplit <- readRDS("data/sixgramsplit.rds") 
 outputSixegram = function(x){
   subset(sixgramsplit, prefix == x)
 }
